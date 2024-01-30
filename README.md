@@ -9,5 +9,14 @@ To alleviate these issues, in this paper, we propose a model-driven MRI reconstr
 The learning of the down-sampling pattern $M$ is heuristic, and it cannot finely reflect the degradation process underlying the acquired undersampled measurement $y$, leading to the limited performance improvement; 2) The physical generation mechanism has not been fully embedded into network design for the joint optimization of $M$ and $X$.
 
 ## Modeling of MXNet
-A degradation process of MRI is $Y=M \odot F X+\bm{\varepsilon},$
+A degradation process of MRI is $Y=M \odot F X+{\varepsilon}$
 
+MRI Reconstruction model is $ min _{M, X}{\Vert M \odot F X - Y \Vert }_{{F}}^2+\lambda_{1}\mathcal{R}_1(M)+\lambda_{2} \mathcal{R}_2(X)$
+
+To address the problem, firstly utilize relaxation techniquesto relax the constraints of $\M_{i j} \in\{0,1\}$, to allow $\M_{i j} \in [0,1]$. Then, we introduce an auxiliary variable $\Z$, defined as $\Z=\F \X$. Then Eq. (\ref{optimize}) can be transformed into the following optimization problem:
+$$
+\min _{\Z, \M, \X}{\Vert\M \odot \Z-\Y\Vert_{{F}}^2+\lambda_{1} \mathcal{R}_1(\M)+\lambda_{2} \mathcal{R}_2(\X)} \\
+%\text { s.t. } \quad \Z-\F \X=0, \\
+\text { s.t. } \Z-\F \X=0,  \quad (1-\M) \odot \Y=0,
+% &\quad (1-\M) \odot \Y=0,
+$$
