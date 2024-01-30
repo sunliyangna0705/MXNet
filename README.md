@@ -6,10 +6,8 @@ Against this magnetic resonance imaging (MRI) reconstruction task, current deep 
 To alleviate these issues, in this paper, we propose a model-driven MRI reconstruction network with unknown sampling pattern, called MXNet. Specifically, based on the MRI physical imaging process, we first jointly optimize the down-sampling pattern and the high-resolution MRI reconstruction. Then based on the proposed optimization algorithm and the deep unfolding technique, we correspondingly construct the deep network where the physical imaging mechanism for MRI reconstruction is fully embedded into the entire learning process. Based on different settings between training data and testing data, including consistent and inconsistent down-sampling patterns, extensive experiments comprehensively substantiate the effectiveness of our proposed MXNet in detail reconstruction as well as its fine generality, beyond the current state-of-the-art MRI reconstruction methods.
 
 ## Challenges in MRI Reconstruction
-The learning of the down-sampling pattern $\M$ is heuristic, and it cannot finely reflect the degradation process underlying the acquired undersampled measurement $y$, leading to the limited performance improvement; 2) The physical generation mechanism has not been fully embedded into network design for the joint optimization of $\M$ and $\X$.
+The learning of the down-sampling pattern $M$ is heuristic, and it cannot finely reflect the degradation process underlying the acquired undersampled measurement $y$, leading to the limited performance improvement; 2) The physical generation mechanism has not been fully embedded into network design for the joint optimization of $M$ and $X$.
 
 ## Modeling of MXNet
-A degradation process of MRI is 
-\begin{equation}\label{degradation}
-\Y=\M \odot \F \X+\bm{\varepsilon},
-\end{equation}
+A degradation process of MRI is $Y=M \odot F X+\bm{\varepsilon},$
+
