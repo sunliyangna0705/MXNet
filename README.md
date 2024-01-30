@@ -20,3 +20,10 @@ $$
 \text { s.t. } \Z-\F \X=0,  \quad (1-\M) \odot \Y=0,
 % &\quad (1-\M) \odot \Y=0,
 $$
+**1) Updating $Z$:**
+$Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$
+**2) Updating $M$:**
+$\M_{n+1} = \text{Prox}_{\lambda_{1}}\left(\frac{\beta \Y^2+ \Y \odot \Z_{n}}{{\beta \Y^2 +\Z_{n+1}}^2+\omega}\right) $
+**3) Updating $X$:**
+$X_{n+1} = \text{Prox}_{\lambda_{2}/\alpha}\left(\F^{-1} \Z_{n+1}\right) $
+## Network architecture
