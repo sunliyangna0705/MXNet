@@ -11,7 +11,7 @@ The learning of the down-sampling pattern $M$ is heuristic, and it cannot finely
 ## Modeling of MXNet
 A degradation process of MRI is 
 
-$Y=M \odot F X+{\varepsilon}$
+$$Y=M \odot F X+{\varepsilon}$$
 
 MRI Reconstruction model is 
 
@@ -21,11 +21,6 @@ $$
 
 
 To address the problem, firstly utilize relaxation techniquesto relax the constraints of $M_{i j} \in\{0,1}$, to allow $M_{i j} \in [0,1]$. Then, we introduce an auxiliary variable $Z$, defined as $Z=F X$. Then it can be transformed into the following optimization problem:
-
-$$
-\min_{Z, M, X} \{\Vert M \odot Z - Y \Vert_{F}^2 + \lambda_{1} \mathcal{R}_1(M) + \lambda_{2} \mathcal{R}_2(X)\} \\
-\text{s.t.} \quad Z - F X = 0, \quad (1 - M) \odot Y = 0,
-$$
 
 $$
 \min_{Z, M, X} || M \odot Z - Y ||_{F}^2 + \lambda_1 R_1 (M) + \lambda_2 R_2 (X)
