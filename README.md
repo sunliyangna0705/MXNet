@@ -20,7 +20,7 @@ $$
 $$
 
 $$
-\min_{M, X} || M \odot F X - Y ||_{F}^2 
+\min_{M, X} || M \odot F X - Y ||_{F}^2 + \\(\lambda\\)_{1} R_1(M)
 $$
 
 
