@@ -16,11 +16,7 @@ $Y=M \odot F X+{\varepsilon}$
 MRI Reconstruction model is 
 
 $$
-\min_{M, X} \| M \odot F X - Y \|_{F}^2 + \lambda_{1} R_1(M) + \lambda_{2} R_2(X)
-$$
-
-$$
-\min_{M, X} || M \odot F X - Y ||_{F}^2 + \lambda_1 R_1 (M) + \lambda_2 R_2 (M)
+\min_{M, X} || M \odot F X - Y ||_{F}^2 + \lambda_1 R_1 (M) + \lambda_2 R_2 (X)
 $$
 
 
@@ -31,6 +27,11 @@ $$
 \text{s.t.} \quad Z - F X = 0, \quad (1 - M) \odot Y = 0,
 $$
 
+$$
+\min_{Z, M, X} || M \odot Z - Y ||_{F}^2 + \lambda_1 R_1 (M) + \lambda_2 R_2 (X)
+s.t. Z - F X = 0,  (1 - M) \odot Y = 0,
+$$
+
 **1) Updating $Z$:**
 
 $Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$
@@ -38,7 +39,7 @@ $Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$
 **2) Updating $M$:**
 
 $$
-M_{n+1} = \text{Prox}_{\lambda_{1}}\left(\frac{\beta Y^2 + Y \odot Z_{n}}{\beta Y^2 + Z_{n+1}^2 + \omega}\right)
+M_(n+1) = Prox_{\lambda_1}\left(\frac{\beta Y^2 + Y \odot Z_n}{\beta Y^2 + Z_(n+1)^2 + \omega}\right)
 $$
 
 
