@@ -30,4 +30,11 @@ $\M_{n+1} = \text{Prox}_{\lambda_{1}}\left(\frac{\beta \Y^2+ \Y \odot \Z_{n}}{{\
 $X_{n+1} = \text{Prox}_{\lambda_{2}/\alpha}\left(\F^{-1} \Z_{n+1}\right) $
 
 ## Network architecture
+![net-pic](https://github.com/sunliyangna0705/MXNet/blob/main/net.jpg)
 
+## Experimental Results
+setting 1: Consistent training-testing setting with noiseless
+setting 2: Consistent training-testing setting with noisy
+setting 3: Inconsistent training-testing setting with noiseless
+setting 4: Inconsistent training-testing setting with noisy
+![set1-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set1-brain.jpg)
