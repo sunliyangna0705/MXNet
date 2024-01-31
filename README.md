@@ -24,13 +24,15 @@ To address the problem, firstly utilize relaxation techniquesto relax the constr
 
 $$
 \min_{Z, M, X} || M \odot Z - Y ||_{F}^2 + \lambda_1 R_1 (M) + \lambda_2 R_2 (X)
+$$
 
+$$
 s.t. Z - F X = 0,  (1 - M) \odot Y = 0,
 $$
 
 **1) Updating $Z$:**
 
-$Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$
+$$Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$$
 
 **2) Updating $M$:**
 
