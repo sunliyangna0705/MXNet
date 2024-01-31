@@ -16,7 +16,7 @@ $Y=M \odot F X+{\varepsilon}$
 MRI Reconstruction model is 
 
 $$
-\min_{M, X} \| M \odot F X - Y \|_{F}^2 + \lambda_{1} \mathcal{R}_1(M) + \lambda_{2} \mathcal{R}_2(X)
+\min_{M, X} \| M \odot F X - Y \|_{F}^2 + \lambda_{1} R_1(M) + \lambda_{2} R_2(X)
 $$
 
 $$
