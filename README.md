@@ -40,7 +40,7 @@ $$
 **3) Updating $X$:**
 
 $$
-X_{n+1} = \text{Prox}_{\lambda_{2}/\alpha}\left(F^{-1} Z_{n+1}\right)
+X_{n+1} = \text{Prox}_{\lambda_{2}/ \alpha}\left(F^{-1} Z_{n+1}\right)
 $$
 
 
