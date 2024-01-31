@@ -53,10 +53,15 @@ $$
 
 ## Experimental Results
 setting 1: Consistent training-testing setting with noiseless
+
 setting 2: Consistent training-testing setting with noisy
+
 setting 3: Inconsistent training-testing setting with noiseless
+
 setting 4: Inconsistent training-testing setting with noisy
+
 **MRI Reconstruction under different setting**
+
 ![set1-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set1-brain.jpg)
 ![set2-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set2-brain.jpg)
 ![set3-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set3-brain.jpg)
@@ -67,6 +72,7 @@ setting 4: Inconsistent training-testing setting with noisy
 ![set4-knee](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set4-knee.jpg)
 
 **Downsampling patterns learned and the effects on image reconstruction in each stage**
+
 ![mask](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/MX-mask.jpg)
 
 
