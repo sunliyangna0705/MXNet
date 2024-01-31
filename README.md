@@ -19,6 +19,11 @@ $$
 \min_{M, X} \| M \odot F X - Y \|_{F}^2 + \lambda_{1} \mathcal{R}_1(M) + \lambda_{2} \mathcal{R}_2(X)
 $$
 
+$$
+\min_{M, X} \| M \odot F X - Y \|_{F}^2 
+$$
+
+
 To address the problem, firstly utilize relaxation techniquesto relax the constraints of $M_{i j} \in\{0,1}$, to allow $M_{i j} \in [0,1]$. Then, we introduce an auxiliary variable $Z$, defined as $Z=F X$. Then it can be transformed into the following optimization problem:
 
 $$
