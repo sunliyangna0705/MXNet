@@ -11,23 +11,30 @@ The learning of the down-sampling pattern $M$ is heuristic, and it cannot finely
 ## Modeling of MXNet
 A degradation process of MRI is $Y=M \odot F X+{\varepsilon}$
 
-MRI Reconstruction model is $ min _{M, X}{\Vert M \odot F X - Y \Vert }_{{F}}^2+\lambda_{1}\mathcal{R}_1(M)+\lambda_{2} \mathcal{R}_2(X)$
+MRI Reconstruction model is $$
+\min_{M, X} \| M \odot F X - Y \|_{F}^2 + \lambda_{1} \mathcal{R}_1(M) + \lambda_{2} \mathcal{R}_2(X)
+$$
 
-To address the problem, firstly utilize relaxation techniquesto relax the constraints of $\M_{i j} \in\{0,1\}$, to allow $\M_{i j} \in [0,1]$. Then, we introduce an auxiliary variable $\Z$, defined as $\Z=\F \X$. Then Eq. (\ref{optimize}) can be transformed into the following optimization problem:
+To address the problem, firstly utilize relaxation techniquesto relax the constraints of $M_{i j} \in\{0,1}$, to allow $M_{i j} \in [0,1]$. Then, we introduce an auxiliary variable $Z$, defined as $Z=F X$. Then Eq. (\ref{optimize}) can be transformed into the following optimization problem:
 $$
-\min _{\Z, \M, \X}{\Vert\M \odot \Z-\Y\Vert_{{F}}^2+\lambda_{1} \mathcal{R}_1(\M)+\lambda_{2} \mathcal{R}_2(\X)} \\
-%\text { s.t. } \quad \Z-\F \X=0, \\
-\text { s.t. } \Z-\F \X=0,  \quad (1-\M) \odot \Y=0,
-% &\quad (1-\M) \odot \Y=0,
+\min_{\Z, \M, \X} \{\Vert \M \odot \Z - \Y \Vert_{F}^2 + \lambda_{1} \mathcal{R}_1(\M) + \lambda_{2} \mathcal{R}_2(\X)\} \\
+\text{s.t.} \quad \Z - \F \X = 0, \quad (1 - \M) \odot \Y = 0,
 $$
+
 **1) Updating $Z$:**
 $Z_{n+1}=\frac{\alpha{F} X_{n}+ M_{n} \odot Y}{\alpha{I} +  M_{n}^2}$
 
 **2) Updating $M$:**
-$\M_{n+1} = \text{Prox}_{\lambda_{1}}\left(\frac{\beta \Y^2+ \Y \odot \Z_{n}}{{\beta \Y^2 +\Z_{n+1}}^2+\omega}\right) $
+$$
+\M_{n+1} = \text{Prox}_{\lambda_{1}}\left(\frac{\beta \Y^2 + \Y \odot \Z_{n}}{\beta \Y^2 + \Z_{n+1}^2 + \omega}\right)
+$$
+
 
 **3) Updating $X$:**
-$X_{n+1} = \text{Prox}_{\lambda_{2}/\alpha}\left(\F^{-1} \Z_{n+1}\right) $
+$$
+X_{n+1} = \text{Prox}_{\lambda_{2}/\alpha}\left(\F^{-1} \Z_{n+1}\right)
+$$
+
 
 ## Network architecture
 ![net-pic](https://github.com/sunliyangna0705/MXNet/blob/main/net.jpg)
@@ -37,6 +44,7 @@ setting 1: Consistent training-testing setting with noiseless
 setting 2: Consistent training-testing setting with noisy
 setting 3: Inconsistent training-testing setting with noiseless
 setting 4: Inconsistent training-testing setting with noisy
+**MRI Reconstruction under different setting**
 ![set1-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set1-brain.jpg)
 ![set2-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set2-brain.jpg)
 ![set3-brain](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set3-brain.jpg)
@@ -45,4 +53,9 @@ setting 4: Inconsistent training-testing setting with noisy
 ![set2-knee](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set2-knee.jpg)
 ![set3-knee](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set3-knee.jpg)
 ![set4-knee](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/set4-knee.jpg)
+
+**Downsampling patterns learned and the effects on image reconstruction in each stage**
+![mask](https://github.com/sunliyangna0705/MXNet/blob/main/PICS/MX-mask.jpg)
+
+
 
