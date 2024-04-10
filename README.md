@@ -49,7 +49,7 @@ $$
 
 
 ## Network architecture
-![net-pic](https://github.com/sunliyangna0705/MXNet/blob/main/net.jpg)
+![net-pic](https://github.com/sunliyangna0705/MXNet/blob/main/net.pdf)
 
 ## Experimental Results
 setting 1: Consistent training-testing setting with noiseless
